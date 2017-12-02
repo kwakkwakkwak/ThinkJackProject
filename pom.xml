@@ -150,15 +150,13 @@
             <artifactId>spring-test</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <!--&lt;!&ndash;jackson:json&ndash;&gt;-->
+        <!--jackson:json-->
         <!--<dependency>-->
         <!--<groupId>com.fasterxml.jackson.core</groupId>-->
         <!--<artifactId>jackson-databind</artifactId>-->
         <!--<version>2.8.4</version>-->
         <!--</dependency>-->
-        <!-- https://mvnrepository.com/artifact/com.googlecode.log4jdbc/log4jdbc -->
-        <!-- jdbc-mybatis Log4jdbc-->
+
         <dependency>
             <groupId>org.bgee.log4jdbc-log4j2</groupId>
             <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
