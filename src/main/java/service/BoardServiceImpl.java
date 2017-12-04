@@ -25,7 +25,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardVO> readAllBoard() throws Exception {
+    public List<BoardVO> listAllBoard() throws Exception {
         return dao.readAllBoard();
     }
 
