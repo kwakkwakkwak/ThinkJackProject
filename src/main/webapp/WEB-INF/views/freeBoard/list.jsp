@@ -11,6 +11,6 @@
     <title>ListPage</title>
 </head>
 <body>
-${list}
+${list[0].bno}/${list[0].title}/${list[0].writer}/${list[0].bno}/${list[0].bno}/
 </body>
 </html>

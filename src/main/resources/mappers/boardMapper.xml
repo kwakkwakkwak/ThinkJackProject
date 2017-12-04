@@ -6,23 +6,23 @@
 <mapper namespace="mapper.boardMapper">
     <insert id="insert">
         INSERT INTO tbl_board (title, content, writer,categoryid)
-          VALUES (#{title},#{content},#{writer},(SELECT categoryid FROM tbl_board_category WHERE categoryname = #{categoryname}))
+          VALUES (#{title},#{content},(SELECT id FROM tbl_user WHERE username = #{writer}),(SELECT categoryid FROM tbl_board_category WHERE categoryname = #{categoryName}))
     </insert>
 
     <select id="selectAll" resultType="BoardVO">
-        SELECT bno, title, content, writer, regdate, viewcnt, (SELECT categoryname from tbl_board_category WHERE tbl_board_category.categoryid = tbl_board.categoryid) categoryname
+        SELECT bno, title, content, (SELECT username FROM tbl_user WHERE tbl_user.id = tbl_board.writer) writer, regdate, viewcnt, (SELECT categoryname from tbl_board_category WHERE tbl_board_category.categoryid = tbl_board.categoryid) categoryname
         FROM tbl_board WHERE bno > 0
         ORDER  BY bno DESC , regdate DESC
     </select>
 
     <select id="selectCategoryBoard" resultType="BoardVO">
-         SELECT bno, title, content, writer, regdate, viewcnt
-        FROM tbl_board WHERE bno > 0 AND categoryid = (SELECT categoryid FROM tbl_board_category where categoryname = #{categoryname})
+         SELECT bno, title, content, (SELECT username FROM tbl_user WHERE tbl_user.id = tbl_board.writer) writer, regdate, viewcnt
+        FROM tbl_board WHERE bno > 0 AND categoryid = (SELECT categoryid FROM tbl_board_category where categoryname = #{categoryName})
         ORDER  BY bno DESC , regdate DESC
     </select>
 
     <select id="select" resultType="BoardVO">
-        SELECT bno, title, content, writer, regdate, viewcnt, categoryid FROM tbl_board WHERE bno = #{bno}
+        SELECT bno, title, content, (SELECT username FROM tbl_user WHERE tbl_user.id = tbl_board.writer) writer, regdate, viewcnt, categoryid FROM tbl_board WHERE bno = #{bno}
     </select>
 
     <delete id="truncate">

@@ -26,8 +26,8 @@ public class BoardTest {
 
         vo.setContent("첫번째 본문");
         vo.setTitle("첫번째 제목");
-        vo.setWriter(1);
-        vo.setCategoryname("free");
+        vo.setWriter("user00");
+        vo.setCategoryName("free");
         dao.createBoard(vo);
     }
 
@@ -48,8 +48,8 @@ public class BoardTest {
 
         vo.setContent("새로운 본문");
         vo.setTitle("새로운 제목");
-        vo.setWriter(1);
-        vo.setCategoryname("free");
+        vo.setWriter("user00");
+        vo.setCategoryName("free");
         dao.createBoard(vo);
 
         List<BoardVO> boardList = dao.readAllBoard();
@@ -96,10 +96,10 @@ public class BoardTest {
 
         vo.setContent("새로운 본문");
         vo.setTitle("새로운 제목");
-        vo.setWriter(1);
-        vo.setCategoryname("free");
+        vo.setWriter("user00");
+        vo.setCategoryName("free");
         dao.createBoard(vo);
-
+        System.out.println(dao.readAllBoard().size());
         List<BoardVO> boardList = dao.readAllBoard();
 
         vo = boardList.get(0);
@@ -107,6 +107,8 @@ public class BoardTest {
         System.out.println(vo);
 
         dao.deleteBoard(vo.getBno());
+
+        System.out.println(dao.readAllBoard().size());
     }
 
     //게시판에 모든 글을 가져와서 보여준다.
@@ -117,8 +119,8 @@ public class BoardTest {
 
         vo.setContent("새로운 본문");
         vo.setTitle("새로운 제목");
-        vo.setWriter(1);
-        vo.setCategoryname("free");
+        vo.setWriter("user00");
+        vo.setCategoryName("free");
         dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
 
         List<BoardVO> list = dao.readAllBoard();
@@ -135,8 +137,8 @@ public class BoardTest {
 
         vo.setContent("새로운 본문");
         vo.setTitle("새로운 제목");
-        vo.setWriter(1);
-        vo.setCategoryname("free");
+        vo.setWriter("user00");
+        vo.setCategoryName("free");
 
         dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
 

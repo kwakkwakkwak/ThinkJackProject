@@ -6,10 +6,10 @@ public class BoardVO {
     private Integer bno;
     private String title;
     private String content;
-    private int writer;
+    private String writer;
     private Date regdate;
     private int viewcnt;
-    private String categoryname;
+    private String categoryName;
 
     public Integer getBno() {
         return bno;
@@ -35,13 +35,6 @@ public class BoardVO {
         this.content = content;
     }
 
-    public int getWriter() {
-        return writer;
-    }
-
-    public void setWriter(int writer) {
-        this.writer = writer;
-    }
 
     public Date getRegdate() {
         return regdate;
@@ -59,14 +52,21 @@ public class BoardVO {
         this.viewcnt = viewcnt;
     }
 
-    public String getCategoryname() {
-        return categoryname;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategoryname(String categoryname) {
-        this.categoryname = categoryname;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
 
     @Override
     public String toString() {
@@ -74,10 +74,10 @@ public class BoardVO {
                 "bno=" + bno +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", writer=" + writer +
+                ", writer='" + writer + '\'' +
                 ", regdate=" + regdate +
                 ", viewcnt=" + viewcnt +
-                ", categoryname='" + categoryname + '\'' +
+                ", categoryname='" + categoryName + '\'' +
                 '}';
     }
 
@@ -88,14 +88,14 @@ public class BoardVO {
 
         BoardVO boardVO = (BoardVO) o;
 
-        if (getWriter() != boardVO.getWriter()) return false;
         if (getViewcnt() != boardVO.getViewcnt()) return false;
         if (getBno() != null ? !getBno().equals(boardVO.getBno()) : boardVO.getBno() != null) return false;
         if (getTitle() != null ? !getTitle().equals(boardVO.getTitle()) : boardVO.getTitle() != null) return false;
         if (getContent() != null ? !getContent().equals(boardVO.getContent()) : boardVO.getContent() != null)
             return false;
+        if (getWriter() != null ? !getWriter().equals(boardVO.getWriter()) : boardVO.getWriter() != null) return false;
         if (getRegdate() != null ? !getRegdate().equals(boardVO.getRegdate()) : boardVO.getRegdate() != null)
             return false;
-        return getCategoryname() != null ? getCategoryname().equals(boardVO.getCategoryname()) : boardVO.getCategoryname() == null;
+        return getCategoryName() != null ? getCategoryName().equals(boardVO.getCategoryName()) : boardVO.getCategoryName() == null;
     }
 }

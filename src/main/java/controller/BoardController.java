@@ -14,7 +14,7 @@ import service.BoardService;
 import javax.inject.Inject;
 
 @Controller
-@RequestMapping("/board/*")
+@RequestMapping("/freeBoard/*")
 public class BoardController {
 
     private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
