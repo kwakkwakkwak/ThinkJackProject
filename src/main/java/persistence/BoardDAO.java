@@ -19,5 +19,4 @@ public interface BoardDAO {
 
     public List<BoardVO> readCategoryBoard(String categoryname) throws Exception;
 
-    public void trancate() throws Exception;
 }

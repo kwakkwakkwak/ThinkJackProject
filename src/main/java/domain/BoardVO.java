@@ -3,81 +3,80 @@ package domain;
 import java.util.Date;
 
 public class BoardVO {
-    private Integer bno;
-    private String title;
-    private String content;
-    private String writer;
-    private Date regdate;
-    private int viewcnt;
-    private String categoryName;
+    private Integer boardId;
+    private String boardTitle;
+    private String boardContent;
+    private String boardWriter;
+    private Date boardRegdate;
+    private int boardViewcnt;
+    private String boardCategoryName;
 
-    public Integer getBno() {
-        return bno;
+    public Integer getBoardId() {
+        return boardId;
     }
 
-    public void setBno(Integer bno) {
-        this.bno = bno;
+    public void setBoardId(Integer boardId) {
+        this.boardId = boardId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getBoardTitle() {
+        return boardTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setBoardTitle(String boardTitle) {
+        this.boardTitle = boardTitle;
     }
 
-    public String getContent() {
-        return content;
+    public String getBoardContent() {
+        return boardContent;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setBoardContent(String boardContent) {
+        this.boardContent = boardContent;
     }
 
-
-    public Date getRegdate() {
-        return regdate;
+    public String getBoardWriter() {
+        return boardWriter;
     }
 
-    public void setRegdate(Date regdate) {
-        this.regdate = regdate;
+    public void setBoardWriter(String boardWriter) {
+        this.boardWriter = boardWriter;
     }
 
-    public int getViewcnt() {
-        return viewcnt;
+    public Date getBoardRegdate() {
+        return boardRegdate;
     }
 
-    public void setViewcnt(int viewcnt) {
-        this.viewcnt = viewcnt;
+    public void setBoardRegdate(Date boardRegdate) {
+        this.boardRegdate = boardRegdate;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public int getBoardViewcnt() {
+        return boardViewcnt;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setBoardViewcnt(int boardViewcnt) {
+        this.boardViewcnt = boardViewcnt;
     }
 
-    public String getWriter() {
-        return writer;
+    public String getBoardCategoryName() {
+        return boardCategoryName;
     }
 
-    public void setWriter(String writer) {
-        this.writer = writer;
+    public void setBoardCategoryName(String boardCategoryName) {
+        this.boardCategoryName = boardCategoryName;
     }
 
     @Override
     public String toString() {
         return "BoardVO{" +
-                "bno=" + bno +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", writer='" + writer + '\'' +
-                ", regdate=" + regdate +
-                ", viewcnt=" + viewcnt +
-                ", categoryname='" + categoryName + '\'' +
+                "boardId=" + boardId +
+                ", boardTitle='" + boardTitle + '\'' +
+                ", boardContent='" + boardContent + '\'' +
+                ", boardWriter='" + boardWriter + '\'' +
+                ", boardRegdate=" + boardRegdate +
+                ", boardViewcnt=" + boardViewcnt +
+                ", boardCategoryName='" + boardCategoryName + '\'' +
                 '}';
     }
 
@@ -88,14 +87,29 @@ public class BoardVO {
 
         BoardVO boardVO = (BoardVO) o;
 
-        if (getViewcnt() != boardVO.getViewcnt()) return false;
-        if (getBno() != null ? !getBno().equals(boardVO.getBno()) : boardVO.getBno() != null) return false;
-        if (getTitle() != null ? !getTitle().equals(boardVO.getTitle()) : boardVO.getTitle() != null) return false;
-        if (getContent() != null ? !getContent().equals(boardVO.getContent()) : boardVO.getContent() != null)
+        if (getBoardViewcnt() != boardVO.getBoardViewcnt()) return false;
+        if (getBoardId() != null ? !getBoardId().equals(boardVO.getBoardId()) : boardVO.getBoardId() != null)
             return false;
-        if (getWriter() != null ? !getWriter().equals(boardVO.getWriter()) : boardVO.getWriter() != null) return false;
-        if (getRegdate() != null ? !getRegdate().equals(boardVO.getRegdate()) : boardVO.getRegdate() != null)
+        if (getBoardTitle() != null ? !getBoardTitle().equals(boardVO.getBoardTitle()) : boardVO.getBoardTitle() != null)
             return false;
-        return getCategoryName() != null ? getCategoryName().equals(boardVO.getCategoryName()) : boardVO.getCategoryName() == null;
+        if (getBoardContent() != null ? !getBoardContent().equals(boardVO.getBoardContent()) : boardVO.getBoardContent() != null)
+            return false;
+        if (getBoardWriter() != null ? !getBoardWriter().equals(boardVO.getBoardWriter()) : boardVO.getBoardWriter() != null)
+            return false;
+        if (getBoardRegdate() != null ? !getBoardRegdate().equals(boardVO.getBoardRegdate()) : boardVO.getBoardRegdate() != null)
+            return false;
+        return boardCategoryName != null ? boardCategoryName.equals(boardVO.boardCategoryName) : boardVO.boardCategoryName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getBoardId() != null ? getBoardId().hashCode() : 0;
+        result = 31 * result + (getBoardTitle() != null ? getBoardTitle().hashCode() : 0);
+        result = 31 * result + (getBoardContent() != null ? getBoardContent().hashCode() : 0);
+        result = 31 * result + (getBoardWriter() != null ? getBoardWriter().hashCode() : 0);
+        result = 31 * result + (getBoardRegdate() != null ? getBoardRegdate().hashCode() : 0);
+        result = 31 * result + getBoardViewcnt();
+        result = 31 * result + (boardCategoryName != null ? boardCategoryName.hashCode() : 0);
+        return result;
     }
 }

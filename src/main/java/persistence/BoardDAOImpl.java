@@ -48,8 +48,4 @@ public class BoardDAOImpl implements BoardDAO {
         return session.selectList(namespace+".selectCategoryBoard" , categoryname);
     }
 
-    @Override
-    public void trancate() throws Exception {
-        session.delete(namespace+".truncate");
-    }
 }

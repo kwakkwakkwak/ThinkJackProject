@@ -24,10 +24,10 @@ public class BoardTest {
         System.out.println("Before create Board");
         BoardVO vo = new BoardVO();
 
-        vo.setContent("첫번째 본문");
-        vo.setTitle("첫번째 제목");
-        vo.setWriter("user00");
-        vo.setCategoryName("free");
+        vo.setBoardContent("첫번째 본문");
+        vo.setBoardTitle("첫번째 제목");
+        vo.setBoardWriter("user00");
+        vo.setBoardCategoryName("free");
         dao.createBoard(vo);
     }
 
@@ -46,10 +46,10 @@ public class BoardTest {
 
         BoardVO vo = new BoardVO();
 
-        vo.setContent("새로운 본문");
-        vo.setTitle("새로운 제목");
-        vo.setWriter("user00");
-        vo.setCategoryName("free");
+        vo.setBoardContent("새로운 본문");
+        vo.setBoardTitle("새로운 제목");
+        vo.setBoardWriter("user00");
+        vo.setBoardCategoryName("free");
         dao.createBoard(vo);
 
         List<BoardVO> boardList = dao.readAllBoard();
@@ -74,10 +74,12 @@ public class BoardTest {
 
         List<BoardVO> boardList = dao.readAllBoard();
 
+        System.out.println(Arrays.toString(boardList.toArray()));
+
         vo = boardList.get(0);
 
-        vo.setContent("업데이트 본문");
-        vo.setTitle("업데이트 제목");
+        vo.setBoardContent("업데이트 본문");
+        vo.setBoardTitle("업데이트 제목");
 
         System.out.println(vo);
 
@@ -94,10 +96,10 @@ public class BoardTest {
     public void Test4() throws Exception{
         BoardVO vo = new BoardVO();
 
-        vo.setContent("새로운 본문");
-        vo.setTitle("새로운 제목");
-        vo.setWriter("user00");
-        vo.setCategoryName("free");
+        vo.setBoardContent("새로운 본문");
+        vo.setBoardTitle("새로운 제목");
+        vo.setBoardWriter("user00");
+        vo.setBoardCategoryName("free");
         dao.createBoard(vo);
         System.out.println(dao.readAllBoard().size());
         List<BoardVO> boardList = dao.readAllBoard();
@@ -106,7 +108,7 @@ public class BoardTest {
 
         System.out.println(vo);
 
-        dao.deleteBoard(vo.getBno());
+        dao.deleteBoard(vo.getBoardId());
 
         System.out.println(dao.readAllBoard().size());
     }
@@ -117,11 +119,12 @@ public class BoardTest {
     public void Test5() throws Exception{
         BoardVO vo = new BoardVO();
 
-        vo.setContent("새로운 본문");
-        vo.setTitle("새로운 제목");
-        vo.setWriter("user00");
-        vo.setCategoryName("free");
-        dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
+        vo.setBoardContent("새로운 본문");
+        vo.setBoardTitle("새로운 제목");
+        vo.setBoardWriter("user00");
+        vo.setBoardCategoryName("free");
+        dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
+        dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
 
         List<BoardVO> list = dao.readAllBoard();
 
@@ -135,12 +138,13 @@ public class BoardTest {
 
         BoardVO vo = new BoardVO();
 
-        vo.setContent("새로운 본문");
-        vo.setTitle("새로운 제목");
-        vo.setWriter("user00");
-        vo.setCategoryName("free");
+        vo.setBoardContent("새로운 본문");
+        vo.setBoardTitle("새로운 제목");
+        vo.setBoardWriter("user00");
+        vo.setBoardCategoryName("free");
 
-        dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
+        dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
+        dao.createBoard(vo);  dao.createBoard(vo);  dao.createBoard(vo);
 
         List<BoardVO> list = dao.readCategoryBoard("free");
         List<BoardVO> list2 = dao.readCategoryBoard("QnA");
